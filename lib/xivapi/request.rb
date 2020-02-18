@@ -65,6 +65,7 @@ module XIVAPI::Request
   # @param all_data [true, false] Return the full set of character data
   # @param data [String, Array <String>] Additional data to request, see: https://xivapi.com/docs/Character#character
   # @param columns [String, Array <String>] One or more columns to limit results to
+  # @param extended [true, false] Request more data by extending out the data IDs to useful objects.
   # @return [OpenStruct] The requested character
   def character(id: nil, all_data: false, data: [], columns: [], extended: false)
     params = { data: character_data(all_data, data), columns: [*columns].join(',') }
